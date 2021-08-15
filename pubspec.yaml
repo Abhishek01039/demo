@@ -1,0 +1,52 @@
+name: demo
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+  flutter_bloc: ^7.1.0
+  get_it: ^7.2.0
+  flare_flutter: ^3.0.2
+  flutter_svg_provider: ^0.1.10
+  equatable: ^2.0.3
+  auto_route:
+  shared_preferences: ^2.0.6
+  cached_network_image: ^3.1.0
+  constant:
+    path: packages/constant
+  flushbar:
+    path: packages/flushbar
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  auto_route_generator:
+  build_runner:
+  json_serializable:
+  freezed: ^0.14.2
+  mocktail: ^0.1.4
+  bloc_test: ^8.1.0
+  freezed_annotation: ^0.14.2
+  flutter_lints: ^1.0.4
+
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/logo/
+    - assets/flare/
+    - assets/icon/
+    - assets/images/
+
+
