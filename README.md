@@ -42,4 +42,4 @@ sh script/code_generator.sh
 sh test/report/generate_report.sh
 ```
 
-[Alt text](test/images/test_coverage_report.png)
+![Alt text](test/images/test_coverage_report.png)
