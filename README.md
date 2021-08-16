@@ -43,3 +43,5 @@ sh test/report/generate_report.sh
 ```
 
 ![Alt text](test/images/test_coverage_report.png)
+
+[![Alt text for your video](https://img.youtube.com/vi/VIDEO-ID/0.jpg)](video/video.mov)
