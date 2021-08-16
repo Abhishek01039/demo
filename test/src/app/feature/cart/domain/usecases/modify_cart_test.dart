@@ -1,5 +1,5 @@
 import 'package:demo/src/app/feature/cart/data/repository/cart_repo_impl.dart';
-import 'package:demo/src/app/feature/cart/domain/usecases/post_cart.dart';
+import 'package:demo/src/app/feature/cart/domain/usecases/modify_cart.dart';
 import 'package:demo/src/app/feature/product/domain/entity/product_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
@@ -25,7 +25,7 @@ void main() {
         () => mockCartRepo.postCart(any()),
       ).thenAnswer((_) => Future.value());
 
-      final postCart = PostCart(cartRepo: mockCartRepo);
+      final postCart = ModifyCart(cartRepo: mockCartRepo);
 
       await postCart.call(cartList);
 

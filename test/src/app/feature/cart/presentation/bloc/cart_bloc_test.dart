@@ -2,7 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:demo/src/app/feature/cart/data/repository/cart_repo_impl.dart';
 import 'package:demo/src/app/feature/cart/domain/usecases/add_to_cart.dart';
 import 'package:demo/src/app/feature/cart/domain/usecases/get_cart.dart';
-import 'package:demo/src/app/feature/cart/domain/usecases/post_cart.dart';
+import 'package:demo/src/app/feature/cart/domain/usecases/modify_cart.dart';
 import 'package:demo/src/app/feature/cart/presentation/bloc/cart_bloc.dart';
 import 'package:demo/src/app/feature/product/domain/entity/product_model.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -14,7 +14,7 @@ class MockCartRepoImpl extends Mock implements CartRepoImpl {}
 
 class MockGetCart extends Mock implements GetCart {}
 
-class MockPostCart extends Mock implements PostCart {}
+class MockModifyCart extends Mock implements ModifyCart {}
 
 class MyTypeFake extends Fake implements Product {}
 
@@ -62,7 +62,7 @@ void main() {
         ).thenAnswer((_) => Future.value(cartList));
         return CartBloc(
             getCart: GetCart(cartRepo: mockCartRepoImpl),
-            postCart: PostCart(cartRepo: mockCartRepoImpl),
+            modifyCart: ModifyCart(cartRepo: mockCartRepoImpl),
             addToCart: AddToCart(cartRepo: mockCartRepoImpl));
       },
       act: (bloc) => bloc.add(const CartEvent.started()),
@@ -82,7 +82,7 @@ void main() {
         ).thenAnswer((_) => Future.value(null));
         return CartBloc(
             getCart: GetCart(cartRepo: mockCartRepoImpl),
-            postCart: PostCart(cartRepo: mockCartRepoImpl),
+            modifyCart: ModifyCart(cartRepo: mockCartRepoImpl),
             addToCart: AddToCart(cartRepo: mockCartRepoImpl));
       },
       act: (bloc) => bloc.add(const CartEvent.started()),
@@ -102,7 +102,7 @@ void main() {
         ).thenThrow('Something went wrong');
         return CartBloc(
             getCart: GetCart(cartRepo: mockCartRepoImpl),
-            postCart: PostCart(cartRepo: mockCartRepoImpl),
+            modifyCart: ModifyCart(cartRepo: mockCartRepoImpl),
             addToCart: AddToCart(cartRepo: mockCartRepoImpl));
       },
       act: (bloc) => bloc.add(const CartEvent.started()),
@@ -126,7 +126,7 @@ void main() {
         ).thenAnswer((_) => Future.value());
         return CartBloc(
             getCart: GetCart(cartRepo: mockCartRepoImpl),
-            postCart: PostCart(cartRepo: mockCartRepoImpl),
+            modifyCart: ModifyCart(cartRepo: mockCartRepoImpl),
             addToCart: AddToCart(cartRepo: mockCartRepoImpl));
       },
       act: (bloc) => bloc.add(CartEvent.increment(cartList, 5)),
@@ -151,7 +151,7 @@ void main() {
         ).thenAnswer((_) => Future.value());
         return CartBloc(
             getCart: GetCart(cartRepo: mockCartRepoImpl),
-            postCart: PostCart(cartRepo: mockCartRepoImpl),
+            modifyCart: ModifyCart(cartRepo: mockCartRepoImpl),
             addToCart: AddToCart(cartRepo: mockCartRepoImpl));
       },
       act: (bloc) => bloc.add(CartEvent.increment(cartList, 1)),
@@ -176,7 +176,7 @@ void main() {
         ).thenAnswer((_) => Future.value());
         return CartBloc(
             getCart: GetCart(cartRepo: mockCartRepoImpl),
-            postCart: PostCart(cartRepo: mockCartRepoImpl),
+            modifyCart: ModifyCart(cartRepo: mockCartRepoImpl),
             addToCart: AddToCart(cartRepo: mockCartRepoImpl));
       },
       act: (bloc) => bloc.add(CartEvent.decrement(cartList, 5)),
@@ -200,7 +200,7 @@ void main() {
         ).thenAnswer((_) => Future.value());
         return CartBloc(
             getCart: GetCart(cartRepo: mockCartRepoImpl),
-            postCart: PostCart(cartRepo: mockCartRepoImpl),
+            modifyCart: ModifyCart(cartRepo: mockCartRepoImpl),
             addToCart: AddToCart(cartRepo: mockCartRepoImpl));
       },
       act: (bloc) => bloc.add(CartEvent.decrement(incrementedList, 5)),
@@ -225,7 +225,7 @@ void main() {
         ).thenAnswer((_) => Future.value());
         return CartBloc(
             getCart: GetCart(cartRepo: mockCartRepoImpl),
-            postCart: PostCart(cartRepo: mockCartRepoImpl),
+            modifyCart: ModifyCart(cartRepo: mockCartRepoImpl),
             addToCart: AddToCart(cartRepo: mockCartRepoImpl));
       },
       act: (bloc) => bloc.add(CartEvent.decrement(cartList, 1)),
@@ -249,7 +249,7 @@ void main() {
         ).thenAnswer((_) => Future.value());
         return CartBloc(
             getCart: GetCart(cartRepo: mockCartRepoImpl),
-            postCart: PostCart(cartRepo: mockCartRepoImpl),
+            modifyCart: ModifyCart(cartRepo: mockCartRepoImpl),
             addToCart: AddToCart(cartRepo: mockCartRepoImpl));
       },
       act: (bloc) => bloc.add(CartEvent.remove(cartList, 5)),
@@ -278,7 +278,7 @@ void main() {
 
         return CartBloc(
             getCart: GetCart(cartRepo: mockCartRepoImpl),
-            postCart: PostCart(cartRepo: mockCartRepoImpl),
+            modifyCart: ModifyCart(cartRepo: mockCartRepoImpl),
             addToCart: AddToCart(cartRepo: mockCartRepoImpl));
       },
       act: (bloc) => bloc.add(CartEvent.addToCartEvent(incrementedList[0]!)),
@@ -307,7 +307,7 @@ void main() {
 
         return CartBloc(
             getCart: GetCart(cartRepo: mockCartRepoImpl),
-            postCart: PostCart(cartRepo: mockCartRepoImpl),
+            modifyCart: ModifyCart(cartRepo: mockCartRepoImpl),
             addToCart: AddToCart(cartRepo: mockCartRepoImpl));
       },
       act: (bloc) => bloc.add(CartEvent.addToCartEvent(incrementedList[0]!)),

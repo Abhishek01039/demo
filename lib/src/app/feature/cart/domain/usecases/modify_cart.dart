@@ -3,9 +3,9 @@ import 'package:demo/src/app/feature/cart/domain/repository/cart_repository.dart
 import 'package:demo/src/app/feature/product/domain/entity/product_model.dart';
 
 /// UseCase for assigning new product list to cart
-class PostCart implements UseCase<void, List<Product?>> {
+class ModifyCart implements UseCase<void, List<Product?>> {
   /// Constructor
-  PostCart({required this.cartRepo});
+  ModifyCart({required this.cartRepo});
 
   /// Instance of [CartRepo]
   final CartRepo cartRepo;

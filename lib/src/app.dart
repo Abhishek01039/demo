@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'app/feature/cart/domain/usecases/add_to_cart.dart';
 import 'app/feature/cart/domain/usecases/get_cart.dart';
-import 'app/feature/cart/domain/usecases/post_cart.dart';
+import 'app/feature/cart/domain/usecases/modify_cart.dart';
 import 'app/feature/cart/presentation/bloc/cart_bloc.dart';
 import 'config/theme_cubit.dart';
 import 'injection/setup_locator.dart';
@@ -22,7 +22,7 @@ class App extends StatelessWidget {
     return BlocProvider<CartBloc>(
       create: (context) => CartBloc(
         getCart: getIt<GetCart>(),
-        postCart: getIt<PostCart>(),
+        modifyCart: getIt<ModifyCart>(),
         addToCart: getIt<AddToCart>(),
       ),
       child: BlocBuilder<ThemeCubit, ThemeState>(

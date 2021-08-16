@@ -25,14 +25,14 @@ void main() {
     });
 
     test('copyWith', () {
-      var userState = UserState(status: UserStatus.isLoadedSuccess);
+      var userState = const UserState(status: UserStatus.isLoadedSuccess);
       userState = userState.copyWith(status: UserStatus.isLoadedError);
 
       expect(userState.status, UserStatus.isLoadedError);
     });
 
     test('copyWith with empty object', () {
-      var userState = UserState(status: UserStatus.isLoadedSuccess);
+      var userState = const UserState(status: UserStatus.isLoadedSuccess);
       userState = userState.copyWith();
 
       expect(userState.status, UserStatus.isLoadedSuccess);

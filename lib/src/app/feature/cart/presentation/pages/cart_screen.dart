@@ -26,6 +26,7 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Styleguide.white,
       appBar: AppBar(
         iconTheme:
             IconThemeData(color: Theme.of(context).colorScheme.onSecondary),
@@ -57,11 +58,10 @@ class _CartScreenState extends State<CartScreen> {
                       ),
                       Text(
                         'Your Cart is empty',
-                        style: Theme.of(context).textTheme.headline1?.copyWith(
-                            color: Theme.of(context).colorScheme.onSecondary ==
-                                    Styleguide.white
-                                ? Styleguide.black
-                                : Styleguide.white),
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline1
+                            ?.copyWith(color: Styleguide.black),
                       ),
                     ],
                   ),
