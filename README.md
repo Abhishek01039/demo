@@ -1,4 +1,4 @@
-# Flutter starter kit
+# Flutter demo
 
 Built with clean architecture and domain driven design with clear seperation of `Presentation`, `Domain` and `Data` layers.
 
